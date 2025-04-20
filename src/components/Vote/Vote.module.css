@@ -1,0 +1,15 @@
+.upVote {
+  background-color: #0091ff;
+}
+
+.downVote {
+  background-color: #5d00ff;
+}
+
+.upVoteNum {
+  color: #0091ff;
+}
+
+.downVoteNum {
+  color: #5d00ff;
+}
