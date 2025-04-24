@@ -1,0 +1,29 @@
+span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  color: #0091ff;
+  background-color: rgb(40, 40, 40);
+  height: 2rem;
+  width: 25rem;
+  padding: 0px 10px;
+  border: none;
+  border-radius: 5px;
+  caret-color: white;
+}
+
+input:focus {
+  outline: 1px solid #0091ff;
+}
+
+button {
+  padding: 0;
+}
+
+.icon {
+  color: #0091ff;
+  font-size: 1.5rem;
+}
