@@ -1,7 +1,33 @@
 #root {
-  max-width: 1280px;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* padding-left: 2rem; */
-  text-align: center;
+  display: grid;
+  grid-template-columns: 3fr auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+header {
+  grid-column: 1 / -1;
+}
+
+#currentSub {
+  grid-column: 1 / -1;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: rgb(20, 20, 20);
+  width: fit-content;
+  border-radius: 10px;
+}
+
+main {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  grid-column: 1;
+}
+
+aside {
+  margin-right: 1rem;
+  grid-column: 2;
+  height: fit-content;
 }
