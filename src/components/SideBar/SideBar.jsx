@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './SideBar.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { clicked } from '../../store/subreddditSlice'
 
 const subs = []
 
@@ -13,13 +15,21 @@ while (i <= 10) {
 }
 
 function SideBar() {
+  const dispatch = useDispatch();
+  const currentSubreddit = useSelector((state) => state.subreddit.current)
+
   return (
-    <div className={styles.subContainer}>
+    <aside className={styles.subContainer}>
       <h2>Subreddits</h2>
       {subs.map(x => (
-        <button key={x.key} className={styles.subreddit}>{x.name}</button>
+        <button 
+        key={x.key} 
+        className={currentSubreddit === x.name ? styles.activeSub : styles.subreddit}
+        onClick={() => dispatch(clicked(x.name))}>
+          {x.name}
+        </button>
       ))}
-    </div>
+    </aside>
   )
 }
 
