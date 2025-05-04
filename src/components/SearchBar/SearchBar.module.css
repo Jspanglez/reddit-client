@@ -8,11 +8,12 @@ input {
   color: #0091ff;
   background-color: rgb(40, 40, 40);
   height: 2rem;
-  width: 25rem;
+  flex-grow: 1;
   padding: 0px 10px;
   border: none;
   border-radius: 5px;
   caret-color: white;
+  margin-left: 2rem;
 }
 
 input:focus {
