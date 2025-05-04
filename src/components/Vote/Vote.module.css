@@ -1,9 +1,9 @@
 .upVote {
-  background-color: #0091ff;
+  color: #0091ff;
 }
 
 .downVote {
-  background-color: #5d00ff;
+  color: #5d00ff;
 }
 
 .upVoteNum {
@@ -12,4 +12,10 @@
 
 .downVoteNum {
   color: #5d00ff;
+}
+
+.defaultVoteNum {
+  width: fit-content;
+  padding: 0 0.25rem 0.25rem 0.25rem;
+  margin: 0;
 }
