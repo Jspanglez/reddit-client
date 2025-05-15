@@ -1,0 +1,47 @@
+@keyframes zoomIn {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.comment {
+  background-color: rgb(60, 60, 60);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: box-shadow .1s ease-in;
+  animation: zoomIn 0.2s ease-in-out;
+}
+
+.comment:hover {
+  box-shadow: 0 10px 15px -5px rgba(255, 255, 255, 0.3);
+  transition: box-shadow .1s ease-in;
+}
+
+.userName {
+  color: #0091ff;
+}
+
+.time {
+  justify-self: end;
+  padding-right: 1rem;
+}
+
+.commentTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.loading {
+  display: grid;
+  justify-self: center;
+}
+
+.loadingIcon {
+  margin-top: 0.5rem;
+  font-size: 3rem;
+  justify-self: center;
+}
