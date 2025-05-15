@@ -1,27 +1,43 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { upvote, downvote } from '../../store/voteSlice'
+import React, { useState } from 'react'
 import styles from './Vote.module.css'
 import { TbArrowBigUp } from "react-icons/tb"
 import { TbArrowBigUpFilled } from "react-icons/tb"
 import { TbArrowBigDown } from "react-icons/tb"
 import { TbArrowBigDownFilled } from "react-icons/tb"
+import { formatNumber } from '../Card/Card'
 
-function Vote() {
 
-  const vote = useSelector((state) => state.vote.value)
-  const upClicked = useSelector((state) => state.vote.upClicked)
-  const downClicked = useSelector((state) => state.vote.downClicked)
-  const dispatch = useDispatch()
+function Vote({ votes }) {
+
+  const [upClicked, setUpClicked] = useState(false)
+  const [downClicked, setDownClicked] = useState(false)
+
+  const handleUpvote = () => {
+    if (upClicked) {
+      setUpClicked(false)
+    } else {
+      setUpClicked(true)
+      setDownClicked(false)
+    }
+  }
+
+  const handleDownvote = () => {
+    if (downClicked) {
+      setDownClicked(false)
+    } else {
+      setDownClicked(true)
+      setUpClicked(false)
+    }
+  }
 
   return (
-    <div>
+    <div className={styles.voteContainer}>
       <button 
-      onClick={() => dispatch(upvote()) }>
+      onClick={handleUpvote}>
         {upClicked ? (
-          <TbArrowBigUpFilled className={styles.upVote} />
+          <TbArrowBigUpFilled className={styles.upVote}/>
         ) : (
-          <TbArrowBigUp />
+          <TbArrowBigUp className={styles.defaultUpVote}/>
         )}
       </button>
       <p
@@ -29,14 +45,14 @@ function Vote() {
           upClicked ? styles.upVoteNum : downClicked ? styles.downVoteNum : ''
         }`}
       >
-        {vote}
+        {formatNumber(votes)}
       </p>
       <button 
-      onClick={() => dispatch(downvote()) }>
+      onClick={handleDownvote}>
         {downClicked ? (
           <TbArrowBigDownFilled className={styles.downVote} />
         ) : (
-          <TbArrowBigDown />
+          <TbArrowBigDown className={styles.defaultDownVote}/>
         )}
       </button>
     </div>
