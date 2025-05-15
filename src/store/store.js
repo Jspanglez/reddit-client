@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import voteReducer from './voteSlice'
 import subredditReducer from './subreddditSlice'
+import postReducer from './postSlice'
 
 export const store = configureStore({
   reducer: {
-    vote: voteReducer,
-    subreddit: subredditReducer
+    subreddit: subredditReducer,
+    posts: postReducer
   },
 })
