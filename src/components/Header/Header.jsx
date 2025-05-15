@@ -3,15 +3,19 @@ import styles from './Header.module.css'
 import SearchBar from '../SearchBar/SearchBar'
 import { useSelector } from 'react-redux'
 
-function Header() {
+function Header({ onSearch }) {
   const currentSubreddit = useSelector((state) => state.subreddit.current)
+
+  const handleLogoClick = () => {
+    window.location.reload()
+  }
 
   return (
     <header className={styles.header}>
-      <h1>
+      <h1 className={styles.logo} onClick={handleLogoClick}>
         <img src='./public/reddit.svg'/> Reddit <b>Lite</b>
       </h1>
-      <SearchBar />
+      <SearchBar onSearch={onSearch}/>
       <h1 className={styles.currentSub}>
         {currentSubreddit ? (
           <>
