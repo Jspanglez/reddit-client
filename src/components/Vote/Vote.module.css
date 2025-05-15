@@ -1,8 +1,21 @@
+.voteContainer {
+  justify-items: center;
+  margin-right: 1rem;
+}
+
 .upVote {
   color: #0091ff;
 }
 
+.defaultUpVote:hover {
+  color: #0091ff;
+}
+
 .downVote {
+  color: #5d00ff;
+}
+
+.defaultDownVote:hover {
   color: #5d00ff;
 }
 
@@ -18,4 +31,13 @@
   width: fit-content;
   padding: 0 0.25rem 0.25rem 0.25rem;
   margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.upVote,
+.defaultUpVote,
+.downVote,
+.defaultDownVote {
+  font-size: 1.5rem;
 }
