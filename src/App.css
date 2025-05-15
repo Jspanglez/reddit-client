@@ -31,3 +31,31 @@ aside {
   grid-column: 2;
   height: fit-content;
 }
+
+.message {
+  display: grid;
+  justify-self: center;
+}
+
+.messageIcon {
+  margin-top: 0.5rem;
+  margin-right: 0.3rem;
+  font-size: 3rem;
+  justify-self: center;
+}
+
+.noPosts {
+  gap: 1rem;
+}
+
+.searchTerm {
+  color: #0091ff;
+}
+
+.homeBtn {
+  background-color: #0091ff;
+  width: fit-content;
+  justify-self: center;
+  padding: 10px;
+  margin-top: 1rem;
+}
