@@ -42,7 +42,7 @@ function Comment({ subreddit, postId, commentSection }) {
     return (
       <div className={styles.loading}>
         <h4>Loading comments...</h4>
-        <FontAwesomeIcon icon={faRedditAlien} beat style={{color: "#0091ff",}} className='loadingIcon'/>
+        <FontAwesomeIcon icon={faRedditAlien} beat style={{color: "#0091ff",}} className={styles.loadingIcon}/>
       </div>
     )
   }
@@ -51,7 +51,7 @@ function Comment({ subreddit, postId, commentSection }) {
     return (
       <div className={styles.loading}>
         <h4>{error}</h4>
-        <FontAwesomeIcon icon={faTriangleExclamation} style={{color: "#0091ff",}} className='loadingIcon'/>
+        <FontAwesomeIcon icon={faTriangleExclamation} style={{color: "#0091ff",}} className={styles.loadingIcon}/>
       </div>
     )
   }
