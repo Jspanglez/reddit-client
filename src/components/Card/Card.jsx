@@ -54,7 +54,7 @@ function Card({title, body, userName, time, comments, subreddit, postId, votes, 
       <hr />
       <div className={styles.cardBottomContainer}>
         <p className={styles.userName}>{userName}</p>
-        <p>{time}</p>
+        <p className={styles.time}>{time}</p>
         <button onClick={handleComments} className={styles.commentNum}>
           <FontAwesomeIcon icon={faMessage} style={{color: "#0091ff", marginTop: "2px"}} />
           {formatNumber(comments)}
