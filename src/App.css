@@ -10,16 +10,6 @@ header {
   grid-column: 1 / -1;
 }
 
-#currentSub {
-  grid-column: 1 / -1;
-  margin: 1rem;
-  padding: 1rem;
-  font-size: 2rem;
-  background-color: rgb(20, 20, 20);
-  width: fit-content;
-  border-radius: 10px;
-}
-
 main {
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -58,4 +48,115 @@ aside {
   justify-self: center;
   padding: 10px;
   margin-top: 1rem;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  border: none;
+  font-size: 2rem;
+  color: #0091ff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+/* ---- MOBILE STYLES ---- */
+@media (max-width: 1063px) {
+  #root {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 4px;
+  }
+
+  main {
+    margin-left: 0.5rem;
+    margin-bottom: 1.2rem;
+    grid-column: 1;
+  }
+
+  .homeBtn {
+    width: 80%;
+    padding: 9px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 800px) {
+  aside {
+    max-width: 220px;
+    width: 100%;
+    margin-right: 0.5rem;
+    grid-column: 2;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 755px) {
+  #root {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  header,
+  main,
+  aside {
+    grid-column: 1 / -1;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+
+  main {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70vw;
+    max-width: 320vw;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  aside.open {
+    width: 85vw;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+
+  .messageIcon {
+    font-size: 2rem;
+  }
+
+  .homeBtn {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+  }
 }
