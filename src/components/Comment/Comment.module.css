@@ -45,3 +45,19 @@
   font-size: 3rem;
   justify-self: center;
 }
+
+@media (max-width: 755px) {
+
+  .userName {
+    font-size: 0.9rem;
+  }
+
+  .time {
+    font-size: 0.9rem;
+  }
+
+  .body {
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+}
