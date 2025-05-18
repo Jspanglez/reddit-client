@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import styles from './SideBar.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { clicked, fetchSubreddits } from '../../store/subreddditSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-function SideBar() {
+function SideBar({ sidebarOpen, setSidebarOpen }) {
   const dispatch = useDispatch();
   const { subreddits, current, loading, error } = useSelector((state) => state.subreddit)
 
@@ -20,7 +22,14 @@ function SideBar() {
   }
 
   return (
-    <aside className={styles.subContainer}>
+    <aside className={`${styles.subContainer} ${sidebarOpen ? 'open' : ''}`}>
+      <button
+        className={styles.close}
+        onClick={() => setSidebarOpen(false)}
+        aria-label="Close sidebar"
+      >
+        <FontAwesomeIcon icon={faXmark} size="lg" style={{color: "#0091ff",}} />
+      </button>
       <h2>Subreddits</h2>
       {subreddits.map(x => (
         <button 
