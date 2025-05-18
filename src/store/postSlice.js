@@ -10,7 +10,8 @@ export const fetchPosts = createAsyncThunk(
     return new Promise((resolve, reject) => {
       debounceTimeout = setTimeout(async () => {
         try {
-          const response = await fetch(`/api/${subreddit}.json`)
+          // const response = await fetch(`/api/${subreddit}.json`)
+          const response = await fetch(`https://api.reddit.com/${subreddit}.json`)
           const data = await response.json()
           resolve(
             data.data.children.map((child) => ({
