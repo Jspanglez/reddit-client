@@ -90,3 +90,40 @@
   border-radius: 10px;
   margin-top: 1rem;
 }
+
+@media (max-width: 1063px) {
+  .cardContainer:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.9);
+  }
+}
+
+@media (max-width: 755px) {
+  .cardContainer {
+    margin: 1rem 1rem 0 1rem;
+    max-width: 100vw;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .postBody {
+    font-size: 0.9rem;
+  }
+
+  .userName {
+    font-size: 0.8rem;
+  }
+
+  .time {
+    font-size: 0.8rem;
+  }
+
+  .cardBottomContainer button {
+    margin-top: 2px;
+  }
+
+  .commentNum {
+    font-size: 0.8rem;
+  }
+}
