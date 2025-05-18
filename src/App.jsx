@@ -17,6 +17,7 @@ function App() {
   const [filteredPosts, setFilteredPosts] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [hasSearched, setHasSearched] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
     dispatch(clearPosts())
@@ -45,6 +46,13 @@ function App() {
   return (
     <>
       <Header onSearch={handleSearch}/>
+      <button
+        className={'hamburger'}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Open sidebar"
+      >
+        &#9776;
+      </button>
       <div>
         {loading && 
         <h2 className='message'>
@@ -85,7 +93,7 @@ function App() {
             />
           ))}
       </div>
-      <SideBar />
+      <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
     </>
   )
 }
