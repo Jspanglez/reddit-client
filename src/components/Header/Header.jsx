@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Header.module.css'
+import snoo from '../../assets/reddit.svg'
 import SearchBar from '../SearchBar/SearchBar'
 import { useSelector } from 'react-redux'
 
@@ -13,7 +14,7 @@ function Header({ onSearch }) {
   return (
     <header className={styles.header}>
       <h1 className={styles.logo} onClick={handleLogoClick}>
-        <img src='./public/reddit.svg'/> Reddit <b>Lite</b>
+        <img src={snoo} alt='Reddit Logo'/> Reddit <b>Lite</b>
       </h1>
       <SearchBar onSearch={onSearch}/>
       <h1 className={styles.currentSub}>
